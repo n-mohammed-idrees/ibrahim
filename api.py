@@ -1,6 +1,5 @@
 from flask import Flask,request,jsonify
 import numpy as np
-import pandas as pd
 import joblib
 app=Flask(__name__)
 model=joblib.load(r"C:\Users\nmoha\OneDrive\Desktop\ibrahim-projects\Backend\diabetes_model.pkl")
