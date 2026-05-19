@@ -2,8 +2,8 @@ from flask import Flask,request,jsonify
 import numpy as np
 import joblib
 app=Flask(__name__)
-model=joblib.load(r"C:\Users\nmoha\OneDrive\Desktop\ibrahim-projects\Backend\diabetes_model.pkl")
-scaler=joblib.load(r"C:\Users\nmoha\OneDrive\Desktop\ibrahim-projects\Backend\diabetes_scaler.pkl")
+model=joblib.load("diabetes_model.pkl")
+scaler=joblib.load("diabetes_scaler.pkl")
 @app.route("/predict",methods=["POST"])
 def predict():
     x=request.json
