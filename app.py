@@ -17,3 +17,4 @@ def predict():
         return jsonify({"ppp":int(a)})
     except Exception as e:
         return jsonify({"error",str(e)})
+app.run()    
