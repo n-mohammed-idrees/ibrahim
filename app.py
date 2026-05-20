@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify
 app=Flask(__name__)
-@app.route("/predict",methods=["POST"])
+@app.route("/",methods=["POST"])
 def predict():
     import numpy as np
     import joblib
