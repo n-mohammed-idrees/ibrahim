@@ -25,7 +25,7 @@ def predict():
         scaler = joblib.load("diabetes_scaler.pkl")
 
         # Get JSON data
-        data = request.get_json()
+        data = request.get_json(force=True)
 
         print("Received Data:", data)
 
