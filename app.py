@@ -25,3 +25,18 @@ def predict():
         return jsonify({
             "error": str(e)
         }), 500
+@app.route("/carpredict", methods=["POST"])
+def carpredict():
+    try:
+        model = joblib.load("Carmodel.pkl")
+        data = request.get_json(force=True)
+        x = np.array(data, dtype=float).reshape(1, -1)
+        prediction = model.predict(x)
+        return jsonify({
+            "prediction": float(prediction[0])
+        })
+    except Exception as e:
+        return jsonify({
+            "error": str(e)
+        }), 500  
+app.run()      
