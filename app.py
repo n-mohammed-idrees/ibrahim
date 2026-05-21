@@ -39,4 +39,3 @@ def carpredict():
         return jsonify({
             "error": str(e)
         }), 500  
-app.run()      
